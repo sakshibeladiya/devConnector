@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "sakshi beladiya",
   "license": "MIT",
@@ -23,5 +25,6 @@
     "concurrently": "^7.6.0",
     "hardhat": "^2.12.5",
     "nodemon": "^2.0.20"
-  }
+  },
+  "proxy": "http://localhost:6000"
 }
