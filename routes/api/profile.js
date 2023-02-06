@@ -31,7 +31,7 @@ router.get('/me', auth, async (req, res) => {
 
 
 //@route      POST api/profile
-//@desc       Create or update a user profile
+//@desc       Create or update a user profile-
 //@access     private
 
 router.post('/', [auth,
@@ -353,8 +353,5 @@ router.get('/github/:username', (req, res) => {
     res.status(500).send('Server Error');
   }
 });
-
-
-
 
 module.exports = router;

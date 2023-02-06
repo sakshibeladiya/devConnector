@@ -19,6 +19,7 @@
     "gravatar": "^1.8.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.2",
+    "pm2": "^5.2.2",
     "request": "^2.88.2"
   },
   "devDependencies": {
@@ -26,5 +27,5 @@
     "hardhat": "^2.12.5",
     "nodemon": "^2.0.20"
   },
-  "proxy": "http://localhost:6000"
+  "proxy": "http://localhost:9008"
 }
