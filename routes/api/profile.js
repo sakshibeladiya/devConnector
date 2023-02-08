@@ -6,6 +6,8 @@ const config = require('config');
 const request = require('request');
 const Profile = require('../../models/profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post');
+
 
 //@route      GET api/profile/me
 //@desc       get current users profile
@@ -72,10 +74,10 @@ router.post('/', [auth,
   if (bio) profileFields.bio = bio;
   if (status) profileFields.status = status;
   if (skills) {
-    profileFields.skills = skills.split(',').map(skill => skill.trim());
+    profileFields.skills = skills
   }
 
-  //buid social object
+  //build social object
   profileFields.social = {};
   if (youtube) profileFields.social.youtube = youtube;
   if (twitter) profileFields.social.twitter = twitter;
@@ -152,8 +154,8 @@ router.get('/user/:user_id', async (req, res) => {
 
 router.delete('/', auth, async (req, res) => {
   try {
-    // @todo - removeusers posts
-
+    // remove user posts
+    await Post.deleteMany({ user: req.user.id });
     //Remove profiles
     await Profile.findOneAndRemove({ user: req.user.id });
 

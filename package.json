@@ -20,6 +20,10 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.2",
     "pm2": "^5.2.2",
+    "react-router": "^5.3.4",
+    "react-router-dom": "^5.3.4",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.1",
     "request": "^2.88.2"
   },
   "devDependencies": {
