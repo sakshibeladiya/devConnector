@@ -36,7 +36,7 @@ img {
 
 /* Utilities */
 .container {
-  max-width: 1100px;
+  max-width: auto;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
@@ -358,7 +358,8 @@ button {
 .landing-inner {
   color: #fff;
   height: 100%;
-  width: 80%;
+  width: 100%;
+  padding-top: -200px;
   margin: auto;
   display: flex;
   flex-direction: column;

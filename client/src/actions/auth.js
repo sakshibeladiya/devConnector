@@ -44,7 +44,7 @@ export const register = ({ name, email, password }) => async dispatch => {
         });
         dispatch(loadUser());
     } catch (err) {
-        console.log(err.response);
+        console.log(err, 'err======');
         const errors = err.response.data.errors;
 
         if (errors) {
@@ -78,7 +78,8 @@ export const login = (email, password) => async dispatch => {
 
         dispatch(loadUser());
     } catch (err) {
-        const errors = err.response.data.errors;
+
+        const errors = err.config.data.errors;// err.response.data.errors
 
         if (errors) {
             errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
