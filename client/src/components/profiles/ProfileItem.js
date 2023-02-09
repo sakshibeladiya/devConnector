@@ -5,15 +5,19 @@ import { Link } from 'react-router-dom'
 const ProfileItem = ({
     profile
 }) => {
+
     return (
         <div className='profile bg-light'>
 
-            <img src={Object.keys(profile).length > 0 && profile.user && profile.user.avatar} alt="photo" className='round-img' />
+            <img src={Object.keys(profile).length > 0 && profile.user && profile.user.avatar} alt="" className='round-img' />
             <div>
                 <h2>{Object.keys(profile).length > 0 && profile.user && profile.user.name}</h2>
+
                 <p>{Object.keys(profile).length > 0 && profile.status} {Object.keys(profile).length > 0 && profile.company && <span> at {profile.company} </span>}</p>
+
                 <p className='my-1'> {Object.keys(profile).length > 0 && profile.location && <span> {profile.location}</span>}</p>
-                <Link to={`http://localhost:8000/profile/${Object.keys(profile).length > 0 && profile.user && profile.user._id}`} className="btn btn-primary">
+
+                <Link to={`/profile/${Object.keys(profile).length > 0 && profile.user && profile.user._id}`} className="btn btn-primary">
                     View Profile
                 </Link>
             </div>
