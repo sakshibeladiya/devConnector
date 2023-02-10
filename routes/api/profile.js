@@ -76,7 +76,7 @@ router.post('/', [auth,
   if (skills) {
     profileFields.skills = skills
   }
-
+  if (githubusername) profileFields.githubusername = githubusername;
   //build social object
   profileFields.social = {};
   if (youtube) profileFields.social.youtube = youtube;

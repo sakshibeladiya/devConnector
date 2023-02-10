@@ -12,6 +12,7 @@ export const getCurrentProfile = () => async (dispatch) => {
             payload: res.data
         });
     } catch (err) {
+        dispatch({ type: CLEAR_PROFILE });
 
         dispatch({
             type: PROFILE_ERROR,
@@ -62,7 +63,7 @@ export const getProfileById = (userId) => async (dispatch) => {
 
 //get github repose
 
-export const getGithubRepose = username => async (dispatch) => {
+export const getGithubRepos = username => async (dispatch) => {
     try {
         const res = await axios.get(`http://localhost:8000/api/profile/github/${username}`)
 
