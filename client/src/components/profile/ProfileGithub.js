@@ -64,7 +64,6 @@ import Spinner from '../layout/Spinner';
 import { getGithubRepos } from '../../actions/profile';
 const ProfileGithub = ({ username, getGithubRepos, repos }) => {
     useEffect(() => {
-        console.log('didmount======');
         getGithubRepos(username);
     }, [getGithubRepos]);
     return (

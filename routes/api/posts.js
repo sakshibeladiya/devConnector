@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const User = require('../../models/User');
-const Profile = require('../../models/profile');
+
 const Post = require('../../models/post');
 const auth = require('../../middleware/auth')
 
@@ -126,6 +126,8 @@ router.put('/like/:id', auth, async (req, res) => {
         post.likes.unshift({ user: req.user.id });
 
         await post.save();
+
+        res.json(post.likes);
 
     } catch (error) {
         console.error(error.message);
